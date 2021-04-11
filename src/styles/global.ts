@@ -30,8 +30,8 @@ const Global = createGlobalStyle`
     --dark: '#705746';
     --steel: '#B7B7CE';
     --fairy: '#D685AD';
-
     //fonts
+
     --font-xs: 0.625rem;
     --font-sm: 0.75rem;
     --font-md: 0.875rem;
@@ -41,17 +41,15 @@ const Global = createGlobalStyle`
     --font-3xl: 2rem;
     --font-4xl: 3rem;
     --font-5xl: 6rem;
-
-
   }
- * {
+
+  * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
   }
 
-  html {
-    font-size: 62.5%;
+  *,*::before, *::after{
+    box-sizing: border-box;
   }
 
   html, body, #__next {
@@ -63,15 +61,26 @@ const Global = createGlobalStyle`
     font-family: -apple-system,BlinkMacSystemFont,segoe ui,roboto,oxygen,cantarell,helvetica neue,ubuntu,sans-serif;
   }
 
+  html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+     margin: 0;
+     padding: 0;
+     border: 0;
+     font-size: 62.5%;
+     font: inherit;
+     vertical-align: baseline;
+  }
   a{
     color:var(--highlight);
   }
+
   button{
     border:none;
   }
+
   button, input{
     outline:none;
   }
+
   li{
     list-style:none;
   }
