@@ -2,7 +2,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 
 import * as S from './styles'
-import { SearchOutline } from '@styled-icons/evaicons-outline'
+import { BiSearch } from 'react-icons/bi'
 
 interface FormData {
   name: string
@@ -23,7 +23,7 @@ const Search = () => {
         })}
       />
       <S.Button>
-        <SearchOutline />
+        <BiSearch />
       </S.Button>
     </S.Container>
   )
