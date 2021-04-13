@@ -7,7 +7,7 @@ interface StyleProps {
 export const Item = styled.div<StyleProps>`
   width: 95%;
   height: 95%;
-  margin: 2%;
+  margin: 2.5%;
   display: flex;
   align-items: center;
   gap: 10px;
