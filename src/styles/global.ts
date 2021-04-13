@@ -4,6 +4,7 @@ const Global = createGlobalStyle`
   :root{
     //colors app
     --black: #212121;
+    --white: #ffffff;
     --orange: #F2AE00;
     --gray-darkest:#303030;
     --gray-dark:#414141;
@@ -66,8 +67,6 @@ const Global = createGlobalStyle`
      padding: 0;
      border: 0;
      font-size: 62.5%;
-     font: inherit;
-     vertical-align: baseline;
   }
   a{
     color:var(--highlight);

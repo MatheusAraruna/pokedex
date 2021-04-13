@@ -1,4 +1,5 @@
 import React from 'react'
+import PokeAPI from 'pokeapi-typescript'
 
 interface Pokemon {
   name: string
@@ -17,6 +18,7 @@ const ContextProvider: React.FC = ({ children }) => {
   const [data, setData] = React.useState<List | null>(null)
 
   const getData = () => {
+    PokeAPI.Pokemon.resolve('pikachu').then((result) => console.log(result))
     setData({ list: [{ name: 'string' }] })
   }
 

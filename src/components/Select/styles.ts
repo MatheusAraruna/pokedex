@@ -29,6 +29,7 @@ export const Icon = styled.div`
   transform: translateY(-50%);
   z-index: 1;
   svg {
+    color: var(--gray-dark);
     font-size: var(--font-2xl);
   }
 `
