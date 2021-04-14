@@ -1,11 +1,11 @@
 // import { usePokeContext } from 'providers/ContextProvider'
-// import Menu from 'components/Menu'
-import Info from 'components/Info'
+
+import Tag from 'components/Tag'
+
 export default function Home() {
   return (
     <div style={{ width: '100%', height: '100vh', display: 'flex' }}>
-      <Info />
-      {/* <Menu /> */}
+      <Tag color="#EE8130">Hello</Tag>
     </div>
   )
 }
