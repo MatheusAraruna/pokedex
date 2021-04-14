@@ -1,4 +1,3 @@
-import React from 'react'
 import * as S from './styles'
 
 import Search from 'components/Search'
