@@ -16,7 +16,11 @@ export default function Item({ item }: ItemProps) {
   const [active, setActive] = React.useState<boolean>(false)
   return (
     <S.Item active={active} onClick={() => setActive(!active)}>
-      <img loading="lazy" alt="Image of a pokemon" src={item.img} />
+      <img
+        loading="lazy"
+        alt="Image of a pokemon"
+        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+      />
       <span>Nº {item.id}</span>
       <h1>{item.name}</h1>
     </S.Item>

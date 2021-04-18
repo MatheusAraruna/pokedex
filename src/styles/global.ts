@@ -31,8 +31,8 @@ const Global = createGlobalStyle`
     --dark: '#705746';
     --steel: '#B7B7CE';
     --fairy: '#D685AD';
-    //fonts
 
+    //fonts
     --font-xs: 0.625rem;
     --font-sm: 0.75rem;
     --font-md: 0.875rem;
@@ -42,6 +42,12 @@ const Global = createGlobalStyle`
     --font-3xl: 2rem;
     --font-4xl: 3rem;
     --font-5xl: 6rem;
+
+    --huge: 1440px
+    --large: 1170px
+    --medium: 768px
+    --small: 450px
+
   }
 
   * {
@@ -82,6 +88,9 @@ const Global = createGlobalStyle`
 
   li{
     list-style:none;
+  }
+  img{
+    user-select: none;
   }
 `
 export default Global

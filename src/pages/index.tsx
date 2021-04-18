@@ -1,11 +1,16 @@
-// import { usePokeContext } from 'providers/ContextProvider'
+import styled from 'styled-components'
 
-import Tag from 'components/Tag'
+import Main from 'screens/Main'
+
+const Container = styled.div`
+  width: 100%;
+  height: 100vh;
+`
 
 export default function Home() {
   return (
-    <div style={{ width: '100%', height: '100vh', display: 'flex' }}>
-      <Tag color="#EE8130">Hello</Tag>
-    </div>
+    <Container>
+      <Main />
+    </Container>
   )
 }

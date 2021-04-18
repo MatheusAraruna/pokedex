@@ -5,7 +5,7 @@ export const Container = styled.form`
   display: flex;
   input,
   button {
-    height: 30px;
+    height: 35px;
     border: none;
     background: var(--gray-light);
   }

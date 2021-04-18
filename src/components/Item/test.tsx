@@ -16,7 +16,10 @@ describe('<Item />', () => {
     const id = screen.getByText(/Nº/i) as HTMLSpanElement
     const name = screen.getByRole('heading') as HTMLHeadingElement
 
-    expect(img).toHaveAttribute('src', 'https://picsum.photos/200')
+    expect(img).toHaveAttribute(
+      'src',
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'
+    )
     expect(img.alt).toBe('Image of a pokemon')
     expect(id.textContent).toBe('Nº 0')
     expect(name.textContent).toBe('pokemon')

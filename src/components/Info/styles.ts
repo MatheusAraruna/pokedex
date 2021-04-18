@@ -1,16 +1,18 @@
 import styled from 'styled-components'
+import media from 'styled-media-query'
 
 export const Container = styled.div`
+  position: relative;
+  z-index: 0;
   display: flex;
   flex-direction: column;
   min-width: 300px;
   height: 100vh;
-  -webkit-box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.33);
-  -moz-box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.33);
-  box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.33);
+  -webkit-box-shadow: -2px 0px 4px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: -2px 0px 4px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: -2px 0px 4px 0px rgba(0, 0, 0, 0.3);
+  background: var(--white);
+  ${media.lessThan('large')`
+    height: auto;
+  `}
 `
-export const Section = styled.div``
-
-export const Title = styled.h1``
-
-export const Content = styled.div``
