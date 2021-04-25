@@ -1,6 +1,7 @@
 import { usePokeContext } from 'providers/ContextProvider'
 
 import getColorType from 'utils/getColorType'
+import formatNumber from 'utils/formatNumber'
 
 import * as S from './styles'
 import Tag from 'components/Tag'
@@ -19,9 +20,9 @@ export default function Card() {
     <S.Container>
       {pokemon && (
         <S.Card colorType={pokemon.types.map((item) => getColorType(item))}>
-          <S.Background>0{pokemon?.id}</S.Background>
+          <S.Background>{formatNumber(pokemon?.id)}</S.Background>
           <S.Header>
-            <span>Nº 0{pokemon?.id} </span>
+            <span>Nº {formatNumber(pokemon?.id)} </span>
           </S.Header>
           <S.Main>
             <img
