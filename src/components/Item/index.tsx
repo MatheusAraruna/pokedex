@@ -1,3 +1,5 @@
+import formatNumber from 'utils/formatNumber'
+
 import * as S from './styles'
 
 export interface ItemData {
@@ -18,7 +20,7 @@ export default function Item({ item, active }: ItemProps) {
         alt={`Pokemon ${item.name} photo`}
         loading="lazy"
       />
-      <span>Nº {item.id}</span>
+      <span>Nº {formatNumber(item.id)}</span>
       <h1>{item.name}</h1>
     </S.Item>
   )

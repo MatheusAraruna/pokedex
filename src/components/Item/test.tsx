@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 import Item from './index'
 
 const obj = {
-  id: 0,
+  id: 1,
   name: 'bulbasaur',
   img: 'https://picsum.photos/200',
 }
@@ -18,10 +18,10 @@ describe('<Item />', () => {
 
     expect(img).toHaveAttribute(
       'src',
-      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png'
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png'
     )
     expect(img.alt).toBe(`Pokemon bulbasaur photo`)
-    expect(id.textContent).toBe('Nº 0')
+    expect(id.textContent).toBe('Nº 001')
     expect(name.textContent).toBe('bulbasaur')
   })
 })
