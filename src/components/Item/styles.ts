@@ -34,6 +34,6 @@ export const Item = styled.div<StyleProps>`
     width: 110px;
   }
   &:hover {
-    background: var(--gray-medium);
+    filter: brightness(0.8);
   }
 `
