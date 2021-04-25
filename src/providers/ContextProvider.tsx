@@ -2,7 +2,7 @@ import React from 'react'
 import PokeAPI from 'pokeapi-typescript'
 
 interface Pokemon {
-  id: number | string
+  id: number
   name: string
   types: string[]
 }
