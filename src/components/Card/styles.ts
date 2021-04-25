@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 import media from 'styled-media-query'
 
+interface PropStyle {
+  colorType: string[]
+}
+
 export const Container = styled.div`
   position: relative;
   width: 100%;
@@ -14,7 +18,7 @@ export const Container = styled.div`
   `}
 `
 
-export const Card = styled.div`
+export const Card = styled.div<PropStyle>`
   position: relative;
   max-width: 600px;
   max-height: 700px;
@@ -26,9 +30,14 @@ export const Card = styled.div`
   flex-direction: column;
   span {
     font-size: var(--font-5xl);
-    font-weight: 700;
+    font-weight: 800;
     text-transform: uppercase;
-    background: linear-gradient(to bottom, #7ac74c 0%, #96d9d6 100%);
+    background: ${({ colorType }) =>
+      colorType.length === 1 &&
+      `linear-gradient(to bottom, ${colorType[0]} 0%, ${colorType[0]} 100%)`};
+    background: ${({ colorType }) =>
+      colorType.length === 2 &&
+      `linear-gradient(to bottom, ${colorType[0]} 0%, ${colorType[1]} 100%)`};
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
