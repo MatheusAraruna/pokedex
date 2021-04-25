@@ -1,25 +1,22 @@
-import React from 'react'
 import * as S from './styles'
 
 export interface ItemData {
   id: number
   name: string
-  img?: string
-  url?: string
 }
 
 interface ItemProps {
   item: ItemData
+  active: boolean
 }
 
-export default function Item({ item }: ItemProps) {
-  const [active, setActive] = React.useState<boolean>(false)
+export default function Item({ item, active }: ItemProps) {
   return (
-    <S.Item active={active} onClick={() => setActive(!active)}>
+    <S.Item active={active}>
       <img
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${item.id}.png`}
+        alt={`Pokemon ${item.name} photo`}
         loading="lazy"
-        alt="Image of a pokemon"
-        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
       />
       <span>Nº {item.id}</span>
       <h1>{item.name}</h1>

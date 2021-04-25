@@ -18,7 +18,8 @@ export const Item = styled.div<StyleProps>`
   color: var(${({ active }) => (active ? '--white' : '--gray-dark')});
   img {
     width: 55px;
-    height: 100%;
+    height: 90%;
+    object-fit: cover;
   }
   span,
   h1 {
