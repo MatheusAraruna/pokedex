@@ -2,31 +2,48 @@ import React from 'react'
 import PokeAPI from 'pokeapi-typescript'
 
 interface Pokemon {
+  id: number | string
   name: string
-}
-interface List {
-  list: Pokemon[] | null
+  types: string[]
 }
 interface ContextType {
-  data: List | null
+  pokemon: Pokemon | null
+  isLoading: boolean
+  isError: string | null
+  getPokemon(name: string): void
 }
 
 const PokeContext = React.createContext<ContextType>({} as ContextType)
 export const usePokeContext = () => React.useContext(PokeContext)
 
 const ContextProvider: React.FC = ({ children }) => {
-  const [data, setData] = React.useState<List | null>(null)
+  const [pokemon, setPokemon] = React.useState<Pokemon | null>(null)
+  const [isLoading, setIsLoading] = React.useState<boolean>(true)
+  const [isError, setIsError] = React.useState<string | null>(null)
 
-  const getData = () => {
-    PokeAPI.Pokemon.resolve('pikachu').then((result) => console.log(result))
-    setData({ list: [{ name: 'string' }] })
+  const getPokemon = (name = 'bulbasaur') => {
+    setIsLoading(true)
+    PokeAPI.Pokemon.resolve(name)
+      .then((result) => {
+        console.log(result)
+        setPokemon({
+          id: result.id,
+          name: result.name,
+          types: result.types.map((item) => item.type.name),
+        })
+        setIsLoading(false)
+      })
+      .catch((err) => setIsError(err))
   }
 
   React.useEffect(() => {
-    getData()
+    getPokemon()
   }, [])
+
   return (
-    <PokeContext.Provider value={{ data }}>{children}</PokeContext.Provider>
+    <PokeContext.Provider value={{ pokemon, isLoading, isError, getPokemon }}>
+      {children}
+    </PokeContext.Provider>
   )
 }
 export default ContextProvider
